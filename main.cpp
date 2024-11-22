@@ -15,7 +15,7 @@ public:
         adjList[v].emplace_back(u, weight);
     }
 
-    void pointGraph() const{
+    void printGraph() const{
         cout << "Graph's adjacency list: " << endl;
         for (const auto& [node, neighbors]: adjList){
             cout << node << " --> ";
@@ -28,8 +28,26 @@ public:
 
     void DFS(int start){
         unordered_map<int, bool> visited;
+        stack<int> s;
+        s.push(start);
 
-        cout << "DFS starting from vertex"
+        cout << "DFS starting from vertex" << start << endl;
+        while (!s.empty()){
+            int current = s.top();
+            s.pop();
+
+            if(!visited[current]) {
+                cout << current << " ";
+                visited[current] = true;
+
+                for(auto it = adjList[current].rbegin(); it != adjList[current].rend(); ++it){
+                    if (!visited[it->first]){
+                        s.push(it->first);
+                    }
+                }
+            }
+        }
+        cout << endl;
     }
 
     void BFS(int start){
