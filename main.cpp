@@ -51,6 +51,22 @@ public:
     }
 
     void BFS(int start){
+        unordered_map<int, bool> visited;
+        queue<int> q;
+        q.push(start);
+
+        cout << "BFS starting from vertex" << start << endl;
+        while (!q.empty()){
+            int current = q.front();
+            q.pop();
+            cout << current << " ";
+
+            for(const auto& [neighbor, weight]: adjList[curr]){
+                if (!visited[neighbor]){
+                    visited[neighbor]
+                }
+            }
+        }
 
     }
 }
