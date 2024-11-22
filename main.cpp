@@ -16,6 +16,23 @@ public:
     }
 
     void pointGraph() const{
+        cout << "Graph's adjacency list: " << endl;
+        for (const auto& [node, neighbors]: adjList){
+            cout << node << " --> ";
+            for (const auto& [neighbor, weight] : neighbors){
+                cout << "(" << neighbor << ", " << weight ") ";
+            }
+            cout << endl;
+        }
+    }
+
+    void DFS(int start){
+        unordered_map<int, bool> visited;
+
+        cout << "DFS starting from vertex"
+    }
+
+    void BFS(int start){
 
     }
 }
