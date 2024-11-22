@@ -1,6 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <unordered_map>
+#include <stack>
+#include <queue>
 #include <list>
 
 using namespace std;
@@ -20,7 +22,7 @@ public:
         for (const auto& [node, neighbors]: adjList){
             cout << node << " --> ";
             for (const auto& [neighbor, weight] : neighbors){
-                cout << "(" << neighbor << ", " << weight ") ";
+                cout << "(" << neighbor << ", " << weight << ") ";
             }
             cout << endl;
         }
@@ -33,14 +35,14 @@ public:
 
         cout << "DFS starting from vertex" << start << endl;
         while (!s.empty()){
-            int current = s.top();
+            int curr = s.top();
             s.pop();
 
-            if(!visited[current]) {
-                cout << current << " ";
-                visited[current] = true;
+            if(!visited[curr]) {
+                cout << curr << " ";
+                visited[curr] = true;
 
-                for(auto it = adjList[current].rbegin(); it != adjList[current].rend(); ++it){
+                for(auto it = adjList[curr].rbegin(); it != adjList[curr].rend(); ++it){
                     if (!visited[it->first]){
                         s.push(it->first);
                     }
@@ -54,22 +56,25 @@ public:
         unordered_map<int, bool> visited;
         queue<int> q;
         q.push(start);
+        visited[start] = true;
 
         cout << "BFS starting from vertex" << start << endl;
         while (!q.empty()){
-            int current = q.front();
+            int curr = q.front();
             q.pop();
-            cout << current << " ";
+            cout << curr << " ";
 
             for(const auto& [neighbor, weight]: adjList[curr]){
                 if (!visited[neighbor]){
-                    visited[neighbor]
+                    visited[neighbor] = true;
+                    q.push(neighbor);
                 }
             }
         }
+        cout << endl;
 
     }
-}
+};
 
 int main(){
     Graph g;
