@@ -18,7 +18,7 @@ public:
     }
 
     void deleteNode(int node) {
-        
+        adjList.erase(node);
     }
 
     void printGraph() const{
