@@ -17,6 +17,10 @@ public:
         adjList[v].emplace_back(u, weight);
     }
 
+    void deleteNode(int node) {
+        
+    }
+
     void printGraph() const{
         cout << "Graph's adjacency list: " << endl;
         for (const auto& [node, neighbors]: adjList){
