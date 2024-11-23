@@ -19,8 +19,11 @@ public:
 
     void deleteNode(int node) {
         adjList.erase(node);
-        for(){
-            neighbors.erase()
+        for(auto& [neighbors] : adjList){
+            neighbors.erase(
+                remove_if(neighbors.begin(), neighbors.end(),
+                [node](const pair<int, int>& edge){return edge.first == node;})
+            )
             neighbors.end();
         }
     }
