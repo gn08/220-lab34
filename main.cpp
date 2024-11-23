@@ -19,6 +19,10 @@ public:
 
     void deleteNode(int node) {
         adjList.erase(node);
+        for(){
+            neighbors.erase()
+            neighbors.end();
+        }
     }
 
     void printGraph() const{
