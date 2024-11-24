@@ -4,7 +4,7 @@
 #include <stack>
 #include <queue>
 #include <list>
-#include <algorithm
+#include <algorithm>
 
 using namespace std;
 
