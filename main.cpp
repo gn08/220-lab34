@@ -167,5 +167,19 @@ int main(){
     busGraph.shortestPath("Cliff Street");
     busGraph.findMinimumTree();
 
+    int choice;
+    do{
+
+        switch (choice){
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 0:
+            default:
+        }
+    } whole (choice != 0);
+
     return 0;
 }
