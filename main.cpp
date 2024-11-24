@@ -5,6 +5,7 @@
 #include <queue>
 #include <list>
 #include <algorithm>
+#include <map>
 
 using namespace std;
 
@@ -58,7 +59,7 @@ public:
         queue<string> q;
         map<string, bool> visit;
 
-        s.push(start);
+        q.push(start);
         visit[start] = true;
 
         while (!q.empty()){
@@ -66,7 +67,7 @@ public:
             q.pop();
             cout << "Check Stop: " << curr << endl;
             for (const auto& [neighbor, time] : adjList[curr]){
-                if (!vist[neighbor]){
+                if (!visit[neighbor]){
                     cout << "  Next Stop: " << neighbor << " [Time: " << time << " ]" << endl;
                     q.push(neighbor);
                     visit[neighbor] = true;
