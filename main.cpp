@@ -73,8 +73,15 @@ public:
         s.push(start);
         visited[start] = true;
 
-        while (!s.empty()){
-            
+        while (!q.empty()){
+            string curr = q.front();
+            q.pop();
+            cout << "Check Stop: " << curr << endl;
+            for (const auto& [neighbor, time] : adjList[curr]){
+                if (!visted[neighbor]){
+                    
+                }
+            }
         }
     }
 
