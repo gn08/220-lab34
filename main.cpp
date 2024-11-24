@@ -11,9 +11,9 @@ using namespace std;
 class Graph{
 public:
     map<string, vector<pair<string, int>>> adjList;
-    void addEdge(int u, int v, int weight){
-        adjList[u].emplace_back(dest, weight);
-        adjList[v].emplace_back(src, weight);
+    void addEdge(const string& src, const string& dest, int weight){
+        adjList[src].emplace_back(dest, weight);
+        adjList[dest].emplace_back(src, weight);
     }
 
     void display(){
