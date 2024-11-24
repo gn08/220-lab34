@@ -4,6 +4,7 @@
 #include <stack>
 #include <queue>
 #include <list>
+#include <algorithm
 
 using namespace std;
 
@@ -22,7 +23,7 @@ public:
         for(auto& [key, neighbors] : adjList){
             neighbors.erase(
                 remove_if(neighbors.begin(), neighbors.end(),
-                [node](const pair<int, int>& edge){return edge.first == node;})
+                [node](const pair<int, int>& edge){return edge.first == node; })
             neighbors.end());
         }
     }
@@ -98,6 +99,8 @@ int main(){
     g.addEdge(2, 5, 5);
     g.addEdge(5, 6, 6);
     g.addEdge(5, 4, 9);
+    g.deleteNode(3);
+    g.deleteNode(6);
 
     g.printGraph();
 
