@@ -21,8 +21,11 @@ public:
     void display(){
         cout << "Bus Routes: " << endl;
         cout << "=====================" << endl;
-        for (const auto& [, neighbors]: adjList){
-            
+        for (const auto& [stop, neighbors]: adjList){
+            cout << "Bus Stop: " << stop << "goes to: " << endl;
+            for (const auto& [neighbor, neighbors]: connections){
+                cout << " to " << neighbor << "[Time: " << time << " ]" << endl;
+            }
         }
     }
 
