@@ -169,6 +169,15 @@ int main(){
 
     int choice;
     do{
+        cout << endl << "Bus System: " << endl;
+        cout << "[1] Display buses: " << endl;
+        cout << "[2] Check spread: " << endl;
+        cout << "[3] Plan route: " << endl;
+        cout << "[4] Calculate shortest path: " << endl;
+        cout << "[5] Find minimum spanning tree: " << endl;
+        cout << "[0] Exit" << endl;
+        cout << "Enter choice: ";
+        cin >> choice;
 
         switch (choice){
             case 1:
@@ -178,8 +187,9 @@ int main(){
             case 5:
             case 0:
             default:
+                cout << "Try again" << endl;
         }
-    } whole (choice != 0);
+    } while (choice != 0);
 
     return 0;
 }
