@@ -21,7 +21,7 @@ public:
         cout << "=====================" << endl;
         for (const auto& [stop, neighbors]: adjList){
             cout << "Bus Stop: " << stop << "goes to: " << endl;
-            for (const auto& [neighbor, neighbors]: connections){
+            for (const auto& [neighbor, time]: neighbors){
                 cout << " to " << neighbor << "[Time: " << time << " ]" << endl;
             }
         }
@@ -31,10 +31,10 @@ public:
         cout << endl << "Route starting from: " << start << endl;
         cout << "===========================================" << endl;
         stack<string> s;
-        map<string, bool> visited;
+        map<string, bool> visit;
 
         s.push(start);
-        visited[start] = true;
+        visit[start] = true;
 
         while (!s.empty()){
             string curr = s.top();
@@ -42,9 +42,9 @@ public:
             cout << "Visiting Stop: " << curr << "\n";
 
             for(const auto& [neighbor, time] : adjList[curr]){
-                if (!visited[neighbor]){
+                if (!visit[neighbor]){
                     s.push(neighbor);
-                    visited[neighbor] = true;
+                    visit[neighbor] = true;
                 }
             }
         }
@@ -56,20 +56,20 @@ public:
         cout << endl << "Inspection from: " << start << endl;
         cout << "=========================================";
         queue<string> q;
-        map<string, bool> visited;
+        map<string, bool> visit;
 
         s.push(start);
-        visited[start] = true;
+        visit[start] = true;
 
         while (!q.empty()){
             string curr = q.front();
             q.pop();
             cout << "Check Stop: " << curr << endl;
             for (const auto& [neighbor, time] : adjList[curr]){
-                if (!visted[neighbor]){
+                if (!vist[neighbor]){
                     cout << "  Next Stop: " << neighbor << " [Time: " << time << " ]" << endl;
                     q.push(neighbor);
-                    visited[neighbor] = true;
+                    visit[neighbor] = true;
                 }
             }
         }
