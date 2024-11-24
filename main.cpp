@@ -182,27 +182,25 @@ int main(){
 
         switch (choice){
             case 1:
-                busNetwork.display();
+                busGraph.display();
                 break;
             case 2:
-                string start;
                 cout << "Enter starting stop: ";
                 cin >> start;
-                busNetwork.bfs(start);
+                busGraph.bfs(start);
                 break;
             case 3:
-                string start;
                 cout << "Enter starting stop: ";
                 cin >> start;
-                busNetwork.dfs(start);
+                busGraph.dfs(start);
                 break;
             case 4:
-                string start;
                 cout << "Enter starting stop: ";
                 cin >> start;
-                busNetwork.shortestPath(start);
+                busGraph.shortestPath(start);
+                break;
             case 5:
-                busNetwork.findMinimumTree();
+                busGraph.findMinimumTree();
                 break;
             case 0:
                 cout << "Exiting" << endl;
