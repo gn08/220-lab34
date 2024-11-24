@@ -112,7 +112,15 @@ public:
     }}
 
     void findMinimumTree{
-        
+        cout << endl << "Minimum Spanning Tree edges:" << endl;
+        cout << "==================================" << endl;
+
+        sort(edges.begin(), edges.end());
+        map<string, string> parent;
+        for (const auto& [node, _] : adjList) {
+            parent[node] = node;
+        }
+
     }
 };
 
