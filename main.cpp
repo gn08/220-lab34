@@ -14,9 +14,11 @@ using namespace std;
 class Graph{
 public:
     map<string, vector<pair<string, int>>> adjList;
+    vector<tuple<int, string, string>> edges;
     void addEdge(const string& src, const string& dest, int weight){
         adjList[src].emplace_back(dest, weight);
         adjList[dest].emplace_back(src, weight);
+        edges.emplace_back(weight, src, dest);
     }
 
     void display(){
@@ -108,6 +110,10 @@ public:
                 cout << start << " -> " << node << " : " << (dist == numeric_limits<int>::max() ? -1 : dist) << endl;
         }
     }}
+
+    void findMinimumTree{
+        
+    }
 };
 
 int main(){
