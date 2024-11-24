@@ -120,6 +120,32 @@ public:
         for (const auto& [node, _] : adjList) {
             parent[node] = node;
         }
+        function<string(string)> findParent = [&](string node){
+            if (parent[node] != node){
+                parent[node] = findParent(parent[node]);
+            }
+            return parent[node];
+        };
+
+        auto unionSets = [&](const string& u, const string& v) {
+            string parentU = findParent(u);
+            string parentV = findParent(v);
+            parent[parentU] = parentV;
+        };
+
+        vector<tuple<int, string, string>> mstEdges;
+        for (const auto& [weight, src, dest] : edges) {
+            if (findParent(src) != findParent(dest)) {
+                mstEdges.emplace_back(weight, src, dest);
+                unionSets(src, dest);
+            }
+        }
+
+        for (const auto& [weight, src, dest] : mstEdges) {
+            cout << "Edge from " << src << " to " << dest << " with capacity: " << weight << " units" << endl;
+        }
+
+
 
     }
 };
@@ -138,6 +164,7 @@ int main(){
     busGraph.dfs("Cliff Street");
     busGraph.bfs("Cliff Street");
     busGraph.shortestPath("Cliff Street");
+    busGraph.findMinimumTree();
 
     return 0;
 }
