@@ -18,6 +18,14 @@ public:
         adjList[v].emplace_back(u, weight);
     }
 
+    void display(){
+        cout << "Bus Routes: " << endl;
+        cout << "=====================" << endl;
+        for (const auto& [, neighbors]: adjList){
+            
+        }
+    }
+
     void deleteNode(int node) {
         adjList.erase(node);
         for(auto& [key, neighbors] : adjList){
