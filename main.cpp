@@ -23,8 +23,7 @@ public:
             neighbors.erase(
                 remove_if(neighbors.begin(), neighbors.end(),
                 [node](const pair<int, int>& edge){return edge.first == node;})
-            )
-            neighbors.end();
+            neighbors.end());
         }
     }
 
