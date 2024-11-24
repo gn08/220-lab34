@@ -8,6 +8,7 @@
 #include <map>
 #include <set>
 #include <limits>
+#include <tuple>
 
 using namespace std;
 
@@ -111,7 +112,7 @@ public:
         }
     }}
 
-    void findMinimumTree{
+    void findMinimumTree(){
         cout << endl << "Minimum Spanning Tree edges:" << endl;
         cout << "==================================" << endl;
 
