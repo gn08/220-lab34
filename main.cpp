@@ -181,7 +181,14 @@ int main(){
 
         switch (choice){
             case 1:
+                busNetwork.display();
+                break;
             case 2:
+                string start;
+                cout << "Enter starting stop: ";
+                cin >> start;
+                busNetwork.bfs(start);
+                break;
             case 3:
             case 4:
             case 5:
