@@ -80,10 +80,16 @@ public:
         cout << endl << "Shortest path: " << start << endl;
         cout << "==================================" << endl;
         map<string, int> distances;
-        
+
         for (const auto& [node, _] : adjList) {
             distances[node] = numeric_limits<int>::max();
         }
+
+        set<pair<int, string>> pq;
+        distances[start] = 0;
+        pq.insert({0, start});
+
+        
 
 
     }
