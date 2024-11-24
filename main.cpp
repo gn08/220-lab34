@@ -190,9 +190,22 @@ int main(){
                 busNetwork.bfs(start);
                 break;
             case 3:
+                string start;
+                cout << "Enter starting stop: ";
+                cin >> start;
+                busNetwork.dfs(start);
+                break;
             case 4:
+                string start;
+                cout << "Enter starting stop: ";
+                cin >> start;
+                busNetwork.shortestPath(start);
             case 5:
+                busNetwork.findMinimumTree();
+                break;
             case 0:
+                cout << "Exiting" << endl;
+                break;
             default:
                 cout << "Try again" << endl;
         }
