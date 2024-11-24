@@ -89,9 +89,22 @@ public:
         distances[start] = 0;
         pq.insert({0, start});
 
-        
+        while (!pq.empty()) {
+            auto [currentDist, currentNode] = *pq.begin();
+            pq.erase(pq.begin());
 
+            for (const auto& [neighbor, weight] : adjList[currentNode]) {
+                int newDist = currentDist + weight;
+                if (newDist < distances[neighbor]) {
+                    pq.erase({distances[neighbor], neighbor});
+                    distances[neighbor] = newDist;
+                    pq.insert({newDist, neighbor});
+                }
+            }
 
+            for (const auto& [node, dist] : distances) {
+                cout << start << " -> " << node << " : " << (dist == numeric_limits<int>::max() ? -1 : dist) << endl;
+        }
     }
 };
 
