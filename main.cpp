@@ -168,6 +168,7 @@ int main(){
     busGraph.findMinimumTree();
 
     int choice;
+    string start;
     do{
         cout << endl << "Bus System: " << endl;
         cout << "[1] Display buses: " << endl;
