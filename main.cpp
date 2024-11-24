@@ -44,6 +44,31 @@ public:
         cout << "===========================================" << endl;
         stack<string> s;
         map<string, bool> visited;
+
+        s.push(start);
+        visited[start] = true;
+
+        while (!s.empty()){
+            string curr = s.top();
+            s.pop();
+            cout << "Visiting Stop: " << curr << "\n";
+
+            for(const auto& [neighbor, time] : adjList[curr]){
+                if (!visited[neighbor]){
+                    s.push(neighbor);
+                    visited[neighbor] = true;
+                }
+            }
+        }
+    
+
+    }
+
+    void bfs(const string& start) {
+        cout << endl << "Inspection from: " << start << endl;
+        cout << "=========================================";
+        queue<string> q;
+        map<string, bool> visited;
     }
 
     void printGraph() const{
