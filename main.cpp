@@ -75,6 +75,18 @@ public:
             }
         }
     }
+
+    void shortestPath(){
+        cout << endl << "Shortest path: " << start << endl;
+        cout << "==================================" << endl;
+        map<string, int> distances;
+        
+        for (const auto& [node, _] : adjList) {
+            distances[node] = numeric_limits<int>::max();
+        }
+
+
+    }
 };
 
 int main(){
