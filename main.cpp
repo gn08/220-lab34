@@ -6,6 +6,8 @@
 #include <list>
 #include <algorithm>
 #include <map>
+#include <set>
+#include <limits>
 
 using namespace std;
 
@@ -76,7 +78,7 @@ public:
         }
     }
 
-    void shortestPath(){
+    void shortestPath(const string& start){
         cout << endl << "Shortest path: " << start << endl;
         cout << "==================================" << endl;
         map<string, int> distances;
@@ -105,7 +107,7 @@ public:
             for (const auto& [node, dist] : distances) {
                 cout << start << " -> " << node << " : " << (dist == numeric_limits<int>::max() ? -1 : dist) << endl;
         }
-    }
+    }}
 };
 
 int main(){
