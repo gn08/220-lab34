@@ -39,6 +39,13 @@ public:
         }
     }
 
+    void dfs(const string& start) {
+        cout << endl << "Route starting from: " << start << endl;
+        cout << "===========================================" << endl;
+        stack<string> s;
+        map<string, bool> visited;
+    }
+
     void printGraph() const{
         cout << "Graph's adjacency list: " << endl;
         for (const auto& [node, neighbors]: adjList){
