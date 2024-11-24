@@ -121,7 +121,7 @@ int main(){
     busGraph.display();
     busGraph.dfs("Cliff Street");
     busGraph.bfs("Cliff Street");
-
+    busGraph.shortestPath("Cliff Street");
 
     return 0;
 }
