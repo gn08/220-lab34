@@ -16,12 +16,18 @@ class Graph{
 public:
     map<string, vector<pair<string, int>>> adjList;
     vector<tuple<int, string, string>> edges;
+    //addEdge() adds an edge between two bus stops in the graph
+    //arguments: src- starting bus stop, dest- final destination stop,
+    //          weight- travel time between
+    //return none
     void addEdge(const string& src, const string& dest, int weight){
         adjList[src].emplace_back(dest, weight);
         adjList[dest].emplace_back(src, weight);
         edges.emplace_back(weight, src, dest);
     }
-
+    //display() displays routes and destinations
+    //arguements: none
+    //return: none
     void display(){
         cout << "Bus Routes: " << endl;
         cout << "=====================" << endl;
@@ -32,7 +38,9 @@ public:
             }
         }
     }
-
+    //dfs() dfs search starting from specifc bus stop
+    //arguements: start- bus stop to start
+    //return: none
     void dfs(const string& start) {
         cout << endl << "Route starting from: " << start << endl;
         cout << "===========================================" << endl;
@@ -57,7 +65,9 @@ public:
     
 
     }
-
+    //bfs() bfs search starting from bus stop
+    //arguements: start- bus stop to start
+    //return: none
     void bfs(const string& start) {
         cout << endl << "Inspection from: " << start << endl;
         cout << "=========================================";
@@ -80,7 +90,9 @@ public:
             }
         }
     }
-
+    //shortestPath() calculates shortest path
+    //arguements: start- bus stop to start
+    //return: none
     void shortestPath(const string& start){
         cout << endl << "Shortest path: " << start << endl;
         cout << "==================================" << endl;
@@ -111,7 +123,9 @@ public:
                 cout << start << " -> " << node << " : " << (dist == numeric_limits<int>::max() ? -1 : dist) << endl;
         }
     }}
-
+    //findMinimumTree() find the minimum spanning tree of graph
+    //argument: none
+    //return: none
     void findMinimumTree(){
         cout << endl << "Minimum Spanning Tree edges:" << endl;
         cout << "==================================" << endl;
